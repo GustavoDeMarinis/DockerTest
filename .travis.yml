@@ -5,7 +5,7 @@ services:
   - docker
 
 before_install:
-  -sudo docker build -t gustavodm/dockertest -f Dockerfile.dev .
+  -docker build -t gustavodm/dockertest -f Dockerfile.dev .
 
 script:
-  -sudo docker run -e CI=true USERNAME/docker-react npm run test 
+  -docker run -e CI=true gustavodm/dockertest npm run test 
